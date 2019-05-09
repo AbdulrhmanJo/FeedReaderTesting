@@ -116,12 +116,12 @@ $(function() {
        beforeEach(function(done){
          loadFeed(0, function(){
            initialfeed = $('.feed').html();
-           done();
+           loadFeed(1, function(){
+             updatedfeed = $('.feed').html();
+             done();
+           });
          });
-         loadFeed(1, function(){
-           updatedfeed = $('.feed').html();
-           done();
-         });
+
        });
 
        it('is feed change When new feed is loaded', function(){
